@@ -75,7 +75,7 @@ async def cancel(event):
     ids.clear()
     
 async def get_bulk_msg(userbot, client, sender, link, msg_id):
-    msg = await userbot.get_messages(link, ids=msg_id)
+    msg = await userbot.get_messages(link, ids=[msg_id])
     if not msg:
         raise IndexError("Message not found")
     
